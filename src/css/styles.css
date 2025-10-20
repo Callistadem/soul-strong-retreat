@@ -417,7 +417,7 @@ section {
 }
 
 .room-header {
-    background: var(--terracotta);
+    background: #C06C5080;
     color: var(--white);
     padding: 3rem 2.5rem;
 }
@@ -426,12 +426,14 @@ section {
     font-size: 2rem;
     font-weight: 400;
     margin-bottom: 0.5rem;
+     color: var(--text);
 }
 
 .occupancy {
     font-size: 1rem;
     opacity: 0.9;
-    font-weight: 300;
+    font-weight: 400;
+    color: var(--text);
 }
 
 .room-body {
@@ -467,6 +469,24 @@ section {
     height: 8px;
     background: var(--terracotta);
     border-radius: 50%;
+}
+
+.pricing-btn {
+    display: inline-block; 
+    padding: 1rem 2.5rem;
+    border-radius: 40px;
+    background: var(--terracotta);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--white);
+}
+
+.pricing-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Hosts Section */
@@ -528,7 +548,7 @@ section {
 
 /* CTA Section */
 .cta {
-    background: var(--terracotta);
+    background: var(--verde-bg);
     padding: 6rem 2rem;
     text-align: center;
 }
@@ -540,14 +560,12 @@ section {
 
 .cta h2 {
     font-size: 3rem;
-    color: var(--white);
     margin-bottom: 1.5rem;
     font-weight: 300;
     letter-spacing: 2px;
 }
 
 .cta p {
-    color: var(--white);
     font-size: 1.3rem;
     margin-bottom: 3rem;
     opacity: 0.95;
@@ -556,19 +574,16 @@ section {
 .btn {
     display: inline-block;
     padding: 1.3rem 3.5rem;
-    background: var(--white);
-    color: var(--terracotta);
+    background: var(--terracotta);
+    color: var(--white);
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    border: 2px solid var(--white);
 }
 
 .btn:hover {
-    background: transparent;
-    color: var(--white);
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
@@ -725,8 +740,6 @@ section {
 
 /* Footer */
 footer {
-    background: var(--azul);
-    color: var(--white);
     padding: 3rem 2rem;
     text-align: center;
 }
