@@ -1,4 +1,3 @@
-
 // Load header and footer includes
 document.addEventListener('DOMContentLoaded', function() {
     // Load header
@@ -10,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 headerPlaceholder.innerHTML = data;
                 // Reinitialize mobile menu after header is loaded
                 initializeMobileMenu();
+                // Initialize scroll behavior after header loads
+                initializeScrollBehavior();
             })
             .catch(error => console.error('Error loading header:', error));
     }
@@ -24,6 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(error => console.error('Error loading footer:', error));
     }
+    
+    // Also initialize for pages without header placeholder
+    initializeMobileMenu();
+    initializeScrollBehavior();
 });
 
 // Initialize mobile menu (called after header loads)
@@ -45,20 +50,36 @@ function initializeMobileMenu() {
     }
 }
 
-// Mobile menu toggle
-const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-const navLinks = document.getElementById('navLinks');
+// Initialize scroll behavior for navbar
+function initializeScrollBehavior() {
+    const navbar = document.getElementById('navbar');
+    if (!navbar) return;
 
-if (mobileMenuToggle && navLinks) {
-    mobileMenuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
+    let lastScroll = 0;
 
-    // Close mobile menu when clicking a link
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-        });
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        // Add scrolled class for background change
+        if (currentScroll > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+        
+        // Hide/show navbar on scroll
+        if (currentScroll <= 0) {
+            navbar.classList.remove('hidden');
+            return;
+        }
+        
+        if (currentScroll > lastScroll && currentScroll > 100) {
+            navbar.classList.add('hidden');
+        } else {
+            navbar.classList.remove('hidden');
+        }
+        
+        lastScroll = currentScroll;
     });
 }
 
@@ -71,27 +92,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     });
-});
-
-// Navbar hide on scroll down, show on scroll up
-let lastScroll = 0;
-const navbar = document.getElementById('navbar');
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll <= 0) {
-        navbar.classList.remove('hidden');
-        return;
-    }
-    
-    if (currentScroll > lastScroll && currentScroll > 100) {
-        navbar.classList.add('hidden');
-    } else {
-        navbar.classList.remove('hidden');
-    }
-    
-    lastScroll = currentScroll;
 });
 
 // Fade in animations on scroll
