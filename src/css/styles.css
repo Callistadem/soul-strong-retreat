@@ -436,7 +436,7 @@ section {
 }
 
 .room-header {
-    background: #C06C5080;
+    background: #C06C5080; 
     color: var(--white);
     padding: 3rem 2.5rem;
 }
@@ -445,7 +445,7 @@ section {
     font-size: 2rem;
     font-weight: 400;
     margin-bottom: 0.5rem;
-     color: var(--text);
+    color: var(--text);
 }
 
 .occupancy {
