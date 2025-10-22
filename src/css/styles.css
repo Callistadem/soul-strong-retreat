@@ -591,7 +591,6 @@ section {
     padding: 3.5rem 3rem;
     position: relative;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    border-radius: 10px;
 }
 
 .pricing-card:hover {
@@ -696,15 +695,13 @@ section {
 }
 
 .included-card {
-    /* background: #C06C5080; */
+    background: var(--white);
+    border-radius: 5px;
     padding: 2.5rem;
-    backdrop-filter: blur(10px);
-    border-left: 1px solid var(--blanco);
     transition: all 0.3s ease;
 }
 
 .included-card:hover {
-    background: rgba(255, 255, 255, 0.15);
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
