@@ -395,7 +395,7 @@ section {
 .experience-card h3 {
     padding: 0.5rem 0;
     font-size: 1.5rem;
-    font-weight: 550;
+    font-weight: 500;
 }
 
 .experience-card p {
@@ -428,28 +428,30 @@ section {
     background: var(--white);
     overflow: hidden;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
 }
 
 .room-card:hover {
     transform: scale(1.02);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.30);
 }
 
 .room-header {
-    background: #C06C5080; 
+    background: #f5f3ef79; 
     color: var(--white);
     padding: 3rem 2.5rem;
 }
 
+
 .room-header h3 {
     font-size: 2rem;
-    font-weight: 400;
+    font-weight: 500;
     margin-bottom: 0.5rem;
     color: var(--text);
 }
 
 .occupancy {
-    font-size: 1rem;
+    font-size: 1.25rem;
     opacity: 0.9;
     font-weight: 400;
     color: var(--text);
@@ -591,6 +593,7 @@ section {
     padding: 3.5rem 3rem;
     position: relative;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
+    overflow: hidden;
 }
 
 .pricing-card:hover {
@@ -598,9 +601,31 @@ section {
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
 }
 
-.pricing-label {
+/* Ribbon Badge for Early Bird Special */
+.pricing-card:first-child .pricing-label {
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(135deg, var(--terracotta) 0%, #c85a3f 100%);
+    color: var(--white);
+    padding: 0.75rem 2rem 0.75rem 1.5rem;
+    margin-left: -3rem;
+    margin-top: -3.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Regular pricing label (non-ribbon style) */
+.pricing-card:not(:first-child) .pricing-label {
     font-size: 1.25rem;
     color: var(--terracotta);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    padding: 0.75rem 2rem 0.75rem 0;
+}
+
+.pricing-label {
+    font-size: 1.25rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 600;
@@ -681,7 +706,6 @@ section {
     color: var(--white);
 }
 
-
 /* Included Section */
 .included {
     background: var(--verde-bg);
@@ -738,7 +762,7 @@ section {
     flex-shrink: 0;
     width: 20px;
     height: 20px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%2A2A2A'%3E%3Cpath d='M400-304 240-464l56-56 104 104 264-264 56 56-320 320Z'/%3E%3C/svg%3E") no-repeat center center;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%232A2A2A'%3E%3Cpath d='M400-304 240-464l56-56 104 104 264-264 56 56-320 320Z'/%3E%3C/svg%3E") no-repeat center center;
     background-size: contain;
     margin-top: 2px;
     opacity: 0.9;
@@ -937,6 +961,16 @@ footer p {
 
     .pricing-hero h1 {
         font-size: 2.5rem;
+    }
+    
+    .pricing-card:first-child .pricing-label {
+        margin-left: -2rem;
+        padding: 0.6rem 1.5rem 0.6rem 1rem;
+        font-size: 1rem;
+    }
+    
+    .pricing-cards {
+        grid-template-columns: 1fr;
     }
 
     .experience-grid {
