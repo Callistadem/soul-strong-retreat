@@ -110,7 +110,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe all animated elements
-document.querySelectorAll('.experience-card, .room-card, .pricing-card, .included-item, .host-card').forEach(el => {
+document.querySelectorAll('.timeline-item, .experience-card, .room-card, .pricing-card, .included-item, .host-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
