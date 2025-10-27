@@ -126,3 +126,76 @@ document.querySelectorAll('.experience-card').forEach((card, index) => {
 document.querySelectorAll('.included-item').forEach((item, index) => {
     item.style.transitionDelay = `${index * 0.05}s`;
 });
+
+// Lightbox functionality for photos
+document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const closeBtn = document.querySelector('.lightbox-close');
+    let currentIndex = 0;
+    
+    // Add click event to all clickable photos
+    const allPhotos = document.querySelectorAll('.clickable-photo, .photo-item img');
+    allPhotos.forEach((photo, index) => {
+        photo.addEventListener('click', function() {
+            lightbox.style.display = 'block';
+            lightboxImg.src = this.src;
+            lightboxCaption.textContent = this.alt;
+            currentIndex = index;
+        });
+    });
+    
+    // Close lightbox when clicking X
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            lightbox.style.display = 'none';
+        });
+    }
+    
+    // Close lightbox when clicking outside the image
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+        }
+    });
+    
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.style.display === 'block') {
+            lightbox.style.display = 'none';
+        }
+    });
+
+    // Show image by index
+    function showImage(index) {
+        if (index < 0) index = allPhotos.length - 1;
+        if (index >= allPhotos.length) index = 0;
+        currentIndex = index;
+        lightboxImg.src = allPhotos[index].src;
+        lightboxCaption.textContent = allPhotos[index].alt;
+    }
+
+    // Prev / Next buttons
+    const prevBtn = document.querySelector('.lightbox-prev');
+    const nextBtn = document.querySelector('.lightbox-next');
+
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showImage(currentIndex - 1);
+        });
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showImage(currentIndex + 1);
+        });
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (lightbox.style.display === 'block') {
+            if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+            if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+        }
+    });
+});

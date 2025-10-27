@@ -393,56 +393,35 @@ section {
 .hotel-name {
     text-align: center;
     font-size: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     color: var(--grey);
     font-weight: 320;
     letter-spacing: 1.5px;
 }
+.hotel-description {
+    text-align: center;
+    color: var(--text);
+    max-width: 800px; 
+    margin: 0 auto;
+}
 
 /* Container stays the same */
 .photo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin: 4rem 0;
-}
-
-/* Wrap each image for positioning the caption */
-.photo-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 4rem 0;
 }
 
 /* Image styling */
 .photo-item img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-/* Caption overlay (hidden by default) */
-.photo-item .caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  color: var(--grey);
-  text-align: center;
-  padding: 1rem;
-  transform: translateY(100%);
-  transition: all 0.4s ease;
-  letter-spacing: 0.5px;
-}
-
-/* Hover effects */
-.photo-item:hover img {
-  transform: translateY(-15%);
-}
-
-.photo-item:hover .caption {
-  transform: translateY(0);
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 5px;
+    transition: transform 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .room-cards {
@@ -485,9 +464,36 @@ section {
     color: var(--text);
 }
 
+
+/* Room Photos Grid */
+.room-photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    padding: 0.75rem;
+}
+
+.room-photo-item {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.room-photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.room-photo-item:hover img {
+    transform: scale(1.1);
+}
+
 .room-body {
     padding: 2.5rem;
 }
+
 
 .bed-info {
     font-weight: 600;
@@ -537,6 +543,118 @@ section {
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
+
+/* Clickable photo cursor */
+.clickable-photo {
+    cursor: pointer;
+}
+
+/* Lightbox styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    animation: zoomIn 0.3s;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); }
+    to { transform: scale(1); }
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: var(--white);
+    font-size: 50px;
+    font-weight: 300;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: var(--terracotta);
+}
+
+.lightbox-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: var(--white);
+    padding: 20px 0;
+    font-size: 1.1rem;
+}
+
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--white);
+    font-size: 3rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
+    padding: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    color: var(--grey);
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+@media (max-width: 768px) {
+    .lightbox-content {
+        max-width: 95%;
+        max-height: 80vh;
+    }
+    
+    .lightbox-close {
+        top: 10px;
+        right: 20px;
+        font-size: 40px;
+    }
+}
+
+
+
 
 /* CTA Section */
 .cta {
@@ -1006,6 +1124,19 @@ footer p {
     }
 
     .photo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .room-photos {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .room-photo-item {
+        height: 250px;
+    }
+    
+    .room-cards {
         grid-template-columns: 1fr;
     }
 }

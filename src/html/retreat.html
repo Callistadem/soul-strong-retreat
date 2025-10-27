@@ -110,33 +110,46 @@
         <div class="container">
             <h2 class="section-title">Where You'll Stay</h2>
             <p class="hotel-name">Blue Holbox Hotel </p>
+            <p class="hotel-description">Blue Holbox is a 4-star hotel located on the idyllic seafront of Holbox Island. Among its amenities are a private beach area with sun loungers, an outdoor pool, and a restaurant serving all areas and rooms.</p>
             
             <div class="photo-grid">
                 <div class="photo-item">
-                    <img src="/assets/hotel3.jpg" alt="Hotel Room">
-                    <div class="caption">Bungalow with Garden View</div>
+                    <img src="/assets/hotel3.jpg" alt="Blue Holbox hotel beach">
                 </div>
 
                 <div class="photo-item">
-                    <img src="/assets/hotel4.jpg" alt="Blue Holbox Hotel">
-                    <div class="caption">Bungalow Balcony</div>
+                    <img src="/assets/hotel4.jpg" alt="Blue Holbox hotel beach">
                 </div>
 
                 <div class="photo-item">
-                    <img src="/assets/hotel2.jpg" alt="Hotel Pool">
-                    <div class="caption">Standard Double Room</div>
+                    <img src="/assets/hotel1.jpg" alt="Blue Holbox hotel bungalows">
                 </div>
             </div>
 
             <div class="room-cards">
+                <!-- Bungalow Room -->
                 <div class="room-card">
                     <div class="room-header">
                         <h3>Bungalow with Garden View</h3>
                         <p class="occupancy">Double Occupancy (shared with one person)</p>
                     </div>
+                    
+                    <!-- Room Photos -->
+                    <div class="room-photos">
+                        <div class="room-photo-item">
+                            <img src="/assets/roomA1.jpg" alt="Bungalow bedroom" class="clickable-photo">
+                        </div>
+                        <div class="room-photo-item">
+                            <img src="/assets/roomA2.jpg" alt="Bungalow outdoor view" class="clickable-photo">
+                        </div>
+                        <div class="room-photo-item">
+                            <img src="/assets/roomA3.jpg" alt="Bungalow balcony" class="clickable-photo">
+                        </div>
+                    </div>
+
                     <div class="room-body">
                         <p class="bed-info">2 Queen Beds</p>
-                        <p> The pool with a view is a top feature of this bungalow. Boasting a private entrance, this air-conditioned bungalow comes with 1 living room, 1 separate bedroom and 1 bathroom. The unit has a mini-bar, garden views, a terrace and chocolate is available for guests. The unit has 2 beds. </p>
+                        <p>The pool with a view is a top feature of this bungalow. Boasting a private entrance, this air-conditioned bungalow comes with 1 living room, 1 separate bedroom and 1 bathroom. The unit has a mini-bar, garden views, a terrace and chocolate is available for guests. The unit has 2 beds.</p>
                         <ul class="room-features">
                             <li>Garden View</li>
                             <li>Pool Access</li>
@@ -149,11 +162,26 @@
                     </div>
                 </div>
 
+                <!-- Standard Double Room -->
                 <div class="room-card">
                     <div class="room-header">
                         <h3>Standard Double Room</h3>
                         <p class="occupancy">Single Occupancy (Private Room)</p>
                     </div>
+                    
+                    <!-- Room Photos -->
+                    <div class="room-photos">
+                        <div class="room-photo-item">
+                            <img src="/assets/roomB1.jpg" alt="Standard Double Room bedroom" class="clickable-photo">
+                        </div>
+                        <div class="room-photo-item">
+                            <img src="/assets/roomB2.jpg" alt="Standard Double Room bedroom" class="clickable-photo">
+                        </div>
+                        <div class="room-photo-item">
+                            <img src="/assets/roomB3.jpg" alt="Standard Double Room bedroom" class="clickable-photo">
+                        </div>
+                    </div>
+
                     <div class="room-body">
                         <p class="bed-info">1 King Bed</p>
                         <p>The double room offers air conditioning, a private entrance, a terrace with garden views as well as a private bathroom. The unit has 1 bed.</p>
@@ -175,6 +203,15 @@
             </div>
         </div>
     </section>
+    
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+        <button class="lightbox-prev">&#10094;</button>
+        <button class="lightbox-next">&#10095;</button>
+    </div>
 
     <section class="cta">
         <div class="cta-content">
