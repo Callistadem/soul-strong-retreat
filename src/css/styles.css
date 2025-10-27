@@ -348,103 +348,74 @@ section {
     background: var(--blanco);
 }
 
-.about-content {
-    max-width: 900px;
+.about-layout {
+    max-width: 1000px;
     margin: 0 auto;
-    font-size: 1.15rem;
-    line-height: 1.9;
 }
 
-.about-content p {
+.about-text-block {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    margin-bottom: 3rem;
+}
+
+.about-text-block p {
     margin-bottom: 1.8rem;
+}
+
+.about-text-block p:last-child {
+    margin-bottom: 0;
+}
+
+/* Two photos side by side */
+.about-photos-duo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.about-photo-item {
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.about-photo-item img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.about-photo-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Single wide photo */
+.about-photo-single {
+    margin: 3rem 0;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.about-photo-single img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.about-photo-single img:hover {
+    transform: scale(1.02);
 }
 
 .highlight {
     color: var(--terracotta);
     font-weight: 600;
 }
-
-.daily-schedule {
-    max-width: 1200px;
-    margin: 5rem auto;
-}
-
-.timeline {
-    position: relative;
-    width: 120%;
-    margin: 0 auto;
-    padding: 2rem 0;
-}
-
-/* Center vertical line */
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 100%;
-    background: var(--grey);
-    opacity: 0.4;
-    border-radius: 2px;
-}
-
-/* Each timeline item */
-.timeline-item {
-    position: relative;
-    width: 50%;
-    padding: 2rem 3rem;
-}
-
-/* Dots (nodes) on the line */
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: var(--grey);
-    border-radius: 50%;
-}
-
-.timeline-item:nth-child(odd)::before {
-    right: -5px; /* aligns with timeline center */
-}
-
-/* RIGHT SIDE items */
-.timeline-item:nth-child(even) {
-    left: 50%;
-}
-
-.timeline-item:nth-child(even)::before {
-    left: -5px; /* aligns with timeline center */
-}
-
-/* Content styling */
-.timeline-content {
-    background: var(--blanco);
-    padding: 1.5rem 2rem;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Time badge and text */
-.time-badge {
-    background: var(--verde-bg);
-    color: var(--text);
-    padding: 0.5rem 1.2rem;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.timeline-content p {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: var(--text);
-}
-
-
 
 /* Experience Section */
 .experience {
