@@ -1002,7 +1002,7 @@ section {
 
 .itinerary-hero {
     text-align: center;
-    padding: 4rem 2rem 3rem;
+    padding: 4rem 2rem 2rem;
     max-width: 950px;
     margin: 0 auto;
 }
@@ -1027,6 +1027,9 @@ section {
     color: var(--grey) !important;
     font-style: italic;
     margin-top: 2rem;
+    max-width: 950px;
+    text-align: center;
+    margin: 2.5rem auto;
 }
 
 .itinerary-section {
