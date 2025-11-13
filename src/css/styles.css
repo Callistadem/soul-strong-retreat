@@ -268,6 +268,7 @@ body.retreat-page nav .mobile-menu-toggle {
 /* Sections */
 section {
     padding: 5rem 2rem;
+    background: var(--blanco);
 }
 
 .container {
@@ -924,6 +925,236 @@ section {
 @media (max-width: 768px) {
     .included-cards {
         grid-template-columns: 1fr;
+    }
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 4rem 2rem;
+}
+
+.faq-item {
+    max-width: 900px;
+    margin: 0 auto;
+    border-bottom: 1px solid #d9d7d3;
+}
+
+.faq-question {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: var(--azul);
+    font-weight: 500;
+    text-align: left;
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+    color: var(--terracotta);
+}
+
+.faq-icon {
+    font-size: 2rem;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 1500px;
+    padding-bottom: 2rem;
+}
+
+.faq-answer p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+
+
+
+/* ----- ITINERARY PAGE ----- */
+.itinerary-page {
+    min-height: 100vh;
+    padding-top: 100px;
+}
+
+.itinerary-hero {
+    text-align: center;
+    padding: 4rem 2rem 3rem;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.itinerary-hero h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    letter-spacing: 3px;
+}
+
+.itinerary-hero p {
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+.itinerary-note {
+    font-size: 0.9rem !important;
+    color: var(--grey) !important;
+    font-style: italic;
+    margin-top: 2rem;
+}
+
+.itinerary-section {
+    padding: 2rem 2rem 5rem;
+}
+
+.day-card {
+    background: var(--white);
+    max-width: 900px;
+    margin: 0 auto 2.5rem;
+    padding: 3rem;
+}
+
+.day-card:last-child {
+    margin-bottom: 0;
+}
+
+.day-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--blanco);
+}
+
+.day-number {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--grey);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.day-header h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0;
+    color: var(--azul);
+    letter-spacing: 1px;
+}
+
+.day-content {
+    padding-left: 0;
+}
+
+.time-block {
+    margin-bottom: 2rem;
+}
+
+.time-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--terracotta);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+}
+
+.time-block p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text);
+    font-weight: 300;
+}
+
+.time-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.time-block ul li {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text);
+
+    padding-left: 1.2rem;
+    position: relative;
+    font-weight: 300;
+}
+
+.time-block ul li::before {
+    content: "●";
+    color: var(--azul);
+    position: absolute;
+    font-size: 0.6rem;
+    left: 0;
+    top: 0.3rem;
+}
+
+.day-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem;
+    margin-top: 2.5rem;
+}
+
+.gallery-placeholder {
+    aspect-ratio: 1/1;
+    background: var(--blanco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e0e0e0;
+}
+
+.gallery-placeholder span {
+    color: var(--grey);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    .itinerary-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .day-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .day-header h2 {
+        font-size: 1.6rem;
+    }
+    
+    .day-gallery {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
