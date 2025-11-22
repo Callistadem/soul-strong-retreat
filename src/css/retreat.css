@@ -1,0 +1,303 @@
+/* ----- RETREAT PAGE ONLY ----- */
+body.retreat-page nav.scrolled .nav-links a {
+    color: var(--text);
+}
+
+body.retreat-page nav.scrolled .nav-logo {
+    color: var(--text);
+}
+
+body.retreat-page nav .nav-logo {
+    color: var(--blanco);
+}
+
+body.retreat-page nav .nav-links a {
+    color: var(--blanco);
+}
+
+body.retreat-page nav .nav-links a::after  {
+    background: var(--blanco);
+}
+
+body.retreat-page nav .mobile-menu-toggle {
+    color: var(--blanco);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background-image: url('/assets/hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    color: var(--white);
+    padding: 2rem;
+    animation: fadeInUp 1.2s ease-out;
+    max-width: 900px;
+}
+
+.hero-content h1 {
+    font-weight: 500;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2); /* Dark overlay */
+    z-index: 5;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tagline {
+    font-size: 3rem;
+    color: var(--white);
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+    opacity: 0.95;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.dates {
+    font-size: 1.3rem;
+    color: var(--white);
+    letter-spacing: 1px;
+    margin-top: 3rem;
+    padding: 1.2rem 2.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 60px;
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 50px;
+    border: 2px solid var(--white);
+    border-radius: 20px;
+    animation: scrollFloat 2s infinite;
+    z-index: 10;
+}
+
+.scroll-indicator::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: var(--white);
+    border-radius: 50%;
+    animation: scrollDot 2s infinite;
+}
+
+@keyframes scrollFloat {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(10px); }
+}
+
+@keyframes scrollDot {
+    0% { transform: translateX(-50%) translateY(0); opacity: 1; }
+    100% { transform: translateX(-50%) translateY(20px); opacity: 0; }
+}
+
+/* ----- HOME PAGE (RETREAT PAGE) ----- */
+
+/* Overview Section */
+.overview {
+    background: var(--verde-bg);
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.overview-card {
+    background: var(--white);
+    padding: 2.5rem;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 5px;
+    text-align: center;
+}
+.overview-card h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.overview-card p {
+    color: var(--grey);
+}
+
+.overview-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+
+/* About Section */
+.about {
+    background: var(--blanco);
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+    line-height: 1.9;
+}
+
+.about-content p {
+    margin-bottom: 1.8rem;
+}
+
+.highlight {
+    color: var(--terracotta);
+    font-weight: 600;
+}
+
+.about-image {
+    margin: 3rem 0;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-image img {
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+    border-radius: 3px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    .about-image {
+        margin: 2rem 0;
+        max-width: 100%;
+    }
+    
+    .about-image img {
+        max-height: 300px;
+    }
+}
+
+
+/* Experience Section */
+.experience {
+    background: var(--verde-bg);
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 4rem;
+    max-width: calc(3 * 400px + 2 * 2.5rem); /* fits 3 columns + gaps */
+    margin-inline: auto; /* center the grid */
+}
+
+.experience-card {
+    background: var(--blanco);
+    padding: 3rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 5px;
+}
+
+.experience-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.experience-card h3 {
+    padding: 0.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.experience-card p {
+    color: var(--text);
+    line-height: 1.7;
+}
+
+.see-inclusions-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.see-inclusions {
+    margin-top: 4rem;
+    font-size: 1rem;
+    padding: 1rem 2.5rem;
+    border-radius: 10px;
+    background: none;
+    color: var(--text);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid var(--text);
+}
+
+.see-inclusions:hover {
+    background-color: var(--grey);
+    color: var(--blanco);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,312 @@
+
+/* Pricing Page */
+.pricing-page {
+    min-height: 100vh;
+    padding-top: 100px;
+}
+
+.pricing-hero {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.pricing-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.pricing-hero p {
+    font-size: 1.3rem;
+    color: var(--grey);
+    font-weight: 300;
+}
+
+.pricing-section {
+    padding: 0 2rem;
+}
+
+.pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background: var(--white);
+    padding: 3.5rem 3rem;
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    overflow: hidden;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Ribbon Badge for Early Bird Special */
+.pricing-card:first-child .pricing-label {
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(135deg, var(--terracotta) 0%, #c85a3f 100%);
+    color: var(--white);
+    padding: 0.75rem 2rem 0.75rem 1.5rem;
+    margin-left: -3rem;
+    margin-top: -3.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Regular pricing label (non-ribbon style) */
+.pricing-card:not(:first-child) .pricing-label {
+    font-size: 1.25rem;
+    color: var(--terracotta);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    padding: 0.75rem 2rem 0.75rem 0;
+}
+
+.pricing-label {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.pricing-period {
+    font-size: 1rem;
+    color: var(--grey);
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.price-row {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--blanco);
+}
+
+.price-row:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.room-type {
+    font-size: 1.1rem;
+    color: var(--azul);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--text);
+}
+
+.price-subtitle {
+    font-size: 0.95rem;
+    color: var(--grey);
+}
+
+.pricing-details {
+    max-width: 800px;
+    margin: 4rem auto 5rem;
+    padding: 3rem;
+    background: var(--white);
+    text-align: center;
+}
+
+.pricing-details h3 {
+    font-size: 1.8rem;
+    color: var(--azul);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.pricing-details p {
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 3rem;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    color: var(--azul);
+    text-decoration: none;
+    border: 2px solid var(--azul);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: var(--azul);
+    color: var(--white);
+}
+
+/* Included Section */
+.included {
+    background: var(--verde-bg);
+}
+
+.included-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+}
+
+.included-card {
+    background: var(--white);
+    border-radius: 5px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+.included-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.included-card h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+    letter-spacing: 1px;
+}
+
+.included-list {
+    list-style: none;
+    padding: 0;
+}
+
+.included-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    position: relative;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.included-list li:last-child {
+    border-bottom: none;
+}
+
+.included-list li::before {
+    content: "";
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%232A2A2A'%3E%3Cpath d='M400-304 240-464l56-56 104 104 264-264 56 56-320 320Z'/%3E%3C/svg%3E") no-repeat center center;
+    background-size: contain;
+    margin-top: 2px;
+    opacity: 0.9;
+}
+
+.pricing-note {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+    .included-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 4rem 2rem;
+}
+
+.faq-category {
+    margin-bottom: 4rem;
+}
+
+.faq-category:last-child {
+    margin-bottom: 0;
+}
+
+.faq-category-title {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--terracotta);
+    margin: 2rem;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+.faq-item {
+    max-width: 900px;
+    margin: 0 auto;
+    border-bottom: 1px solid #d9d7d3;
+}
+
+.faq-question {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: var(--azul);
+    font-weight: 500;
+    text-align: left;
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+    color: var(--terracotta);
+}
+
+.faq-icon {
+    font-size: 2rem;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 1500px;
+    padding-bottom: 2rem;
+}
+
+.faq-answer p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0;
+}
