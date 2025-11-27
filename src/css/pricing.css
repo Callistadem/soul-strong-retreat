@@ -1,30 +1,7 @@
 
-/* Pricing Page */
-.pricing-page {
-    min-height: 100vh;
-    padding-top: 100px;
-}
-
-.pricing-hero {
-    text-align: center;
-    padding: 4rem 2rem;
-}
-
-.pricing-hero h1 {
-    font-size: 3.5rem;
-    font-weight: 300;
-    margin-bottom: 1rem;
-    letter-spacing: 2px;
-}
-
-.pricing-hero p {
-    font-size: 1.3rem;
-    color: var(--grey);
-    font-weight: 300;
-}
-
 .pricing-section {
-    padding: 0 2rem;
+    padding: 2rem;
+    margin-bottom: 3rem;
 }
 
 .pricing-cards {
@@ -37,7 +14,7 @@
 
 .pricing-card {
     background: var(--white);
-    padding: 3.5rem 3rem;
+    padding: 3rem;
     position: relative;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     overflow: hidden;
@@ -63,12 +40,8 @@
 
 /* Regular pricing label (non-ribbon style) */
 .pricing-card:not(:first-child) .pricing-label {
-    font-size: 1.25rem;
     color: var(--terracotta);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 600;
-    padding: 0.75rem 2rem 0.75rem 0;
+    padding: 0.75rem 0 0.75rem 0;
 }
 
 .pricing-label {
@@ -105,7 +78,7 @@
 }
 
 .price {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 300;
     color: var(--text);
 }
@@ -117,7 +90,7 @@
 
 .pricing-details {
     max-width: 800px;
-    margin: 4rem auto 5rem;
+    margin: 4rem auto 2rem;
     padding: 3rem;
     background: var(--white);
     text-align: center;
@@ -130,10 +103,14 @@
     font-weight: 400;
 }
 
-.pricing-details p {
-    font-size: 1.1rem;
-    color: var(--text);
-    line-height: 1.8;
+.pricing-details ul {
+    list-style-type: none;
+    padding: 1.5rem;
+}
+
+.pricing-details .payment-note {
+    font-size: 0.9rem;
+    opacity: 0.95;
 }
 
 .back-btn {
@@ -222,12 +199,6 @@
     opacity: 0.95;
 }
 
-@media (max-width: 768px) {
-    .included-cards {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* FAQ Section */
 .faq-section {
     padding: 4rem 2rem;
@@ -310,3 +281,26 @@
 .faq-answer p:last-child {
     margin-bottom: 0;
 }
+
+@media (max-width: 768px) {
+    .pricing-cards, .included-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-card:first-child .pricing-label {
+        font-size: 1rem;
+    }
+    
+    .pricing-card {
+        padding: 2rem;
+    }
+
+    .pricing-card:first-child .pricing-label {
+        margin-left: -2rem;
+    }
+
+    .pricing-details {
+        padding: 3rem 2rem;
+    }
+
+}   

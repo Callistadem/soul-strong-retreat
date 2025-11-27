@@ -23,6 +23,12 @@ body.retreat-page nav .mobile-menu-toggle {
     color: var(--blanco);
 }
 
+@media (max-width: 768px) {
+    body.retreat-page nav .nav-links a {
+        color: var(--text);
+    }
+}
+
 /* Hero Section */
 .hero {
     height: 100vh;
@@ -153,6 +159,20 @@ body.retreat-page nav .mobile-menu-toggle {
     100% { transform: translateX(-50%) translateY(20px); opacity: 0; }
 }
 
+@media (max-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+    .tagline {
+        font-size: 2rem;
+    }
+
+    .dates {
+        font-size: 1rem;
+    }
+}
+
+
 /* ----- HOME PAGE (RETREAT PAGE) ----- */
 
 /* Overview Section */
@@ -226,17 +246,12 @@ body.retreat-page nav .mobile-menu-toggle {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
+
 @media (max-width: 768px) {
-    .about-image {
-        margin: 2rem 0;
-        max-width: 100%;
-    }
-    
-    .about-image img {
-        max-height: 300px;
+    .about-content {
+        font-size: 1rem;
     }
 }
-
 
 /* Experience Section */
 .experience {

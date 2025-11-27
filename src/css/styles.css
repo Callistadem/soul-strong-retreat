@@ -135,7 +135,25 @@ section {
 
 .section-subtitle {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    color: var(--grey);
+    font-weight: 300;
+}
+
+.page-hero {
+    text-align: center;
+    padding: 2rem 2rem;
+}
+
+.page-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.page-hero p {
+    font-size: 1.3rem;
     color: var(--grey);
     font-weight: 300;
 }
@@ -153,30 +171,26 @@ section {
     margin: 0 auto;
 }
 
-.cta h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    font-weight: 300;
-    letter-spacing: 1.5px;
+.cta-content .section-title{
+    font-weight: 250;
 }
 
 .cta p {
-    font-size: 1.3rem;
+    margin-top: 1rem;
     margin-bottom: 3rem;
-    opacity: 0.95;
 }
 
 .btn {
     display: inline-block;
-    padding: 1.3rem 3.5rem;
+    padding: 1.3rem 3rem;
     background: var(--terracotta);
     color: var(--white);
     text-decoration: none;
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .btn:hover {
@@ -236,14 +250,6 @@ footer p {
         color: var(--text);
     }
 
-    body.retreat-page nav .nav-links a {
-        color: var(--text);
-    }
-
-    body.retreat-page nav .nav-links a::after  {
-        background: var(--text);
-    }
-    
     body.retreat-page nav.scrolled .mobile-menu-toggle {
         color: var(--text);
     }
@@ -262,7 +268,11 @@ footer p {
     }
 
     .section-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1.25rem;
     }
 
     .dates {
@@ -274,44 +284,23 @@ footer p {
         padding: 4rem 1.5rem;
     }
 
-    .room-cards,
-    .pricing-cards,
+    .page-hero {
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+    
+    .page-hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .page-hero p {
+        font-size: 1.1rem;
+    }
+
+    .experience-grid,
+    .photo-grid,
     .hosts-grid {
         grid-template-columns: 1fr;
     }
 
-    .pricing-hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .pricing-card:first-child .pricing-label {
-        margin-left: -2rem;
-        padding: 0.6rem 1.5rem 0.6rem 1rem;
-        font-size: 1rem;
-    }
-    
-    .pricing-cards {
-        grid-template-columns: 1fr;
-    }
-
-    .experience-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .photo-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .room-photos {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-    }
-    
-    .room-photo-item {
-        height: 250px;
-    }
-    
-    .room-cards {
-        grid-template-columns: 1fr;
-    }
 }
